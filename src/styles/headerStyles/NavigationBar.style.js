@@ -2,33 +2,18 @@ import { StyleSheet } from 'react-native';
 
 export default styles = StyleSheet.create({
     container: {
-        height: '15%',
-        width: '100%',
+        height: 85,
+        width: 370,
         backgroundColor: 'black',
         justifyContent: 'flex-end',
+        paddingBottom: 0,
     },
     nav:{
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignContent: 'center',
-        height: '70%',
-        width: '100%',
-        backgroundColor: '#6cafda',
-    },
-    btn:{
-        height: 65,
-        width: 120,
-        margin: 0.5,
-        // borderWidth: 0.5,
-
-    },
-    txt:{
-        marginTop: 'auto',
-        marginBottom: 'auto',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        color: 'white',
-        fontSize: 17,
-        fontWeight: 'bold',
+        marginRight: 5,
+        marginBottom: 0,
+        marginLeft: 0,
+        padding: 0,
+        backgroundColor: '#b3d9ff',
+        width: 370,
     }
   });

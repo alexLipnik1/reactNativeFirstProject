@@ -5,6 +5,7 @@ import NavigationBar from './src/components/header/NavigationBar';
 import Body from './src/components/body/Body';
 
 export default class App extends React.Component {
+
   render() {
     return (
       <View style={styles.container}>
