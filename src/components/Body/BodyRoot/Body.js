@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, DrawerLayoutAndroid,  TouchableOpacity } from 'react-native';
 import React from 'react';
-import styles from '../../styles/bodyStyles/Body.style';
+import styles from './Body.style';
+
 
 
 export default class NavBar extends React.Component{
