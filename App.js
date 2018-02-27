@@ -1,18 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+
 import styles from './src/Root/App.style';
-import NavigationBar from './src/components/Header/HeaderRoot/NavigationBar.js';
-import HomePage from './src/components/Body/HomePage/homePage.js';
-import Tasks from './src/components/Body/Tasks/TeskList';
+import HomePage from './src/components/HomePage/homePage.js';
+import Tasks from './src/components/Tasks/tasksPage';
+
 import { Ionicons } from '@expo/vector-icons'; // 6.2.2
 import { StackNavigator } from 'react-navigation'; // 1.0.0-beta.27
 import { TabNavigator, TabBarBottom } from 'react-navigation'; // 1.0.0-beta.27
 
+
+
 const _icon = 'ios-cube';
 const Tab = TabNavigator({
-  Home: { screen: HomePage },
   Tasks: { screen: Tasks },
+  Home: { screen: HomePage },
   },
+
+
   {
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {

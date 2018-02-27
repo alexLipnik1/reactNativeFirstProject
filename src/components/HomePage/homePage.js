@@ -1,13 +1,9 @@
 import {View, Text, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import styles from './homePage.style';
-import NavigationBar from '../../Header/HeaderRoot/NavigationBar'
 
 export default class HomePage extends React.Component{
 
-    static navigationOptions = {
-    headerTitle: <NavigationBar />,
-    };
 
     render(){
         const header = 'Wellcom';
