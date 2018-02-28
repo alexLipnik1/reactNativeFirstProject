@@ -3,6 +3,8 @@ import { View, Text } from 'react-native';
 import { List, ListItem, Button } from 'react-native-elements';
 import Overlay from 'react-native-modal-overlay';
 import styles from './tasksPage.style'
+import OverlayPage from './Overlay/overlayPage';
+
 
 const list = [
     {
@@ -21,7 +23,7 @@ export default class TasksPage extends React.Component {
     constructor(){
         super();
         this.state = {
-            open: false,
+            open: true,
         }
     }
 
@@ -54,9 +56,7 @@ export default class TasksPage extends React.Component {
                     containerStyle={styles.containerStyle}
                     childrenWrapperStyle={styles.childrenWrapperStyle}
                     animationDuration={500}>
-                    <Text>Some Modal Content</Text>
-                    <Button textStyle={styles.textStyle} buttonStyle={styles.buttonStyle}  title='Close Window' onPress={this.toggleOverlay}/>
-                    
+                    <OverlayPage toggleOverlay={this.toggleOverlay} />
                 </Overlay>
             </View>
         )
