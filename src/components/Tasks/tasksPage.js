@@ -4,7 +4,7 @@ import { List, ListItem, Button } from 'react-native-elements';
 import Overlay from 'react-native-modal-overlay';
 import styles from './tasksPage.style'
 import OverlayPage from './Overlay/overlayPage';
-
+import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 
 const list = [
     {
@@ -23,13 +23,24 @@ export default class TasksPage extends React.Component {
     constructor(){
         super();
         this.state = {
-            open: true,
+            open: false,
+            tasks: [{task: '1'}],
         }
     }
 
     toggleOverlay = () => {
         this.setState({
+            ...this.state,
             open: !this.state.open,
+        })
+    }
+
+    sendTesk = (value) => {
+        console.log(this.state.tasks)
+        this.setState({
+            ...this.state,
+            open: !this.state.open,
+            tasks: value
         })
     }
 
@@ -47,18 +58,21 @@ export default class TasksPage extends React.Component {
                 </List>   
 
                 <View style={styles.buttonContainer}>
-                    <Button textStyle={styles.textStyle} buttonStyle={styles.buttonStyle} title='Add Task' onPress={this.toggleOverlay}/>
+                    <Button textStyle={styles.textStyle}
+                            buttonStyle={styles.buttonStyle}
+                            title='Add Task' onPress={this.toggleOverlay}
+                    />
                 </View>
-
 
                 <Overlay visible={this.state.open}
                     closeOnTouchOutside animationType="zoomIn"
                     containerStyle={styles.containerStyle}
                     childrenWrapperStyle={styles.childrenWrapperStyle}
                     animationDuration={500}>
-                    <OverlayPage toggleOverlay={this.toggleOverlay} />
+                    <OverlayPage sendTesk={this.sendTesk} />
                 </Overlay>
             </View>
         )
     }
+
 }
