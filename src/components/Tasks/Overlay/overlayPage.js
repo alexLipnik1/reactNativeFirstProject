@@ -5,15 +5,16 @@ import styles from './overlay.Style';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 
 export default Overlay = (props) => {
-    let text = '';
-    const {sendTesk} = props;
+    let Task = '';
+    const {addTesk} = props;
+
 
     const handlePress = () => {
-        sendTesk(text);
+        addTesk(Task);
     }
 
     const changedText = (value) => {
-        text = value;
+        Task = value;
     }
 
     return (
@@ -24,14 +25,14 @@ export default Overlay = (props) => {
                 <Form>
                     <Item floatingLabel>
                         <Label>Task Name</Label>
-                        <Input onChangeText={ changedText}/>
+                        <Input onChangeText={changedText}/>
                     </Item>
                 </Form>
                 </Content>
             </Container>
             <Button textStyle={styles.textStyle}
                     buttonStyle={styles.buttonStyle}
-                    title='Close Window' onPress={handlePress}
+                    title='Submit' onPress={handlePress}
             />
         </View>
     )

@@ -24,9 +24,13 @@ export default class TasksPage extends React.Component {
         super();
         this.state = {
             open: false,
-            tasks: [{task: '1'}],
+            tasks: [],
         }
     }
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log(nextState);
+      }
 
     toggleOverlay = () => {
         this.setState({
@@ -35,12 +39,12 @@ export default class TasksPage extends React.Component {
         })
     }
 
-    sendTesk = (value) => {
-        console.log(this.state.tasks)
+    addTesk = (value) => {
+        let {tasks} = this.state; 
+
         this.setState({
-            ...this.state,
             open: !this.state.open,
-            tasks: value
+            tasks: [...tasks, value]
         })
     }
 
@@ -69,7 +73,7 @@ export default class TasksPage extends React.Component {
                     containerStyle={styles.containerStyle}
                     childrenWrapperStyle={styles.childrenWrapperStyle}
                     animationDuration={500}>
-                    <OverlayPage sendTesk={this.sendTesk} />
+                    <OverlayPage addTesk={this.addTesk} />
                 </Overlay>
             </View>
         )
