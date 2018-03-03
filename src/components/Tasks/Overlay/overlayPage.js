@@ -14,7 +14,7 @@ export default Overlay = (props) => {
     }
 
     const changedText = (value) => {
-        Task = value;
+        Task = {taskName: value};
     }
 
     return (

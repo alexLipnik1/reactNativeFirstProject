@@ -9,6 +9,9 @@ export default styles = StyleSheet.create({
     },
     buttonContainer:{
         alignItems: 'center',
+        backgroundColor: '#fefefe',
+        borderTopWidth: 2,
+        paddingTop: 20,
     },
     containerStyle: {
         backgroundColor: 'rgba(37, 8, 10, 0.78)'
