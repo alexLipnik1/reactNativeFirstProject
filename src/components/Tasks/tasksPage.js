@@ -15,18 +15,9 @@ export default class TasksPage extends React.Component {
         this.state = {
             open: false,
             tasks: [
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
-                {taskName: '1'},
+                {taskName: 'First Task'},
+                {taskName: 'Seconde Task'},
+                {taskName: 'Third Task'},
             ],
         }
     }
