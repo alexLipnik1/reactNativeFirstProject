@@ -6,57 +6,22 @@ const mainColor1 = 'black';
 export default styles = StyleSheet.create({
     container: {
         padding: 5, 
-        // borderBottomWidth: 1,
         flexDirection: 'row',
     },
+
+
+    //  ========================== Regular ==========================
+
+
     taskBody: {
         height: 55,
         flexDirection: 'row',
-        marginRight: 5,
         backgroundColor: mainColor,
         flex: 6,
         alignItems: 'center',
         justifyContent: 'center',
     },
-    taskBodyActive: {
-        height: 105,
-        flexDirection: 'row',
-        marginRight: 5,
-        backgroundColor: '#ccfff2',
-        flex: 6,
-        // alignItems: 'center',
-        justifyContent: 'center',
-    },
-    triangle1: {
-        marginTop: 80,
-        borderTopWidth: 18,
-        borderRightWidth: 18,
-        borderLeftWidth: 18,
-        borderBottomWidth: 18,
-        borderTopColor: 'transparent',
-        borderRightColor: 'transparent',
-        borderLeftColor: mainColor1,
-        borderBottomColor: mainColor1,       
-        height: 35,
-        width: 35,
-        zIndex: 99,
-    },
-    triangle2: {
-        zIndex: 99,
-        position: 'absolute',
-        borderTopWidth: 30,
-        borderRightWidth: 30,
-        borderLeftWidth: 30,
-        borderBottomWidth: 30,
-        borderTopColor: 'transparent',
-        borderRightColor: 'transparent',
-        borderLeftColor: 'white',
-        borderBottomColor: 'white',        
-        height: 60,
-        width: 60,
-    },
-    taxt: {
-        // marginRight: 80,
+    text: {
         fontSize: 20,
         fontWeight: 'bold',
     },
@@ -71,4 +36,52 @@ export default styles = StyleSheet.create({
         width: 35,
         backgroundColor: '#f2f2f2',
     },
+
+
+    //  ========================== Active ==========================
+
+    ActiveOptionsContainer:{
+        height: 60,
+        flexDirection: 'row',
+    },
+    taskBodyActive: {
+        height: 115,
+        backgroundColor: mainColor,
+        flex: 6,
+        justifyContent: 'center',
+    },  
+    textContainer: {
+        backgroundColor: '#85e0e0',
+        alignItems: 'center',
+    },
+    textActive: {
+        backgroundColor: 'transparent',
+        fontSize: 20,
+        padding: 15,
+        fontWeight: 'bold',
+    },
+
+    
+    notification: {
+        margin: 10,
+        flex: 1,
+        backgroundColor: 'white',
+    },
+    importance: {
+        flex: 1,
+        margin: 10,
+        backgroundColor: 'white',
+    },
+    activeButton: {
+        margin: 6,
+        borderBottomWidth: 1.5, 
+        borderRightWidth: 0.5, 
+        borderColor: '#cccccc', 
+        width: 115,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        backgroundColor: '#98e698',
+    }      
+
   });
