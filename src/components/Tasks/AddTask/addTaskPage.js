@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
-import styles from './overlay.Style';
+import styles from './addTaskPage.Style';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 
 export default OverlayPage = (props) => {
@@ -14,7 +14,7 @@ export default OverlayPage = (props) => {
     }
 
     const changedText = (value) => {
-        Task = {taskName: value, active: false};
+        Task = {taskName: value, active: false, finished: false};
     }
 
     return (

@@ -6,18 +6,19 @@ import Overlay from 'react-native-modal-overlay';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 
 import styles from './tasksPage.style'
-import OverlayPage from './Overlay/overlayPage';
+import AddTaskPage from './Overlay/overlayPage';
 import List from './TaskList/taskList.js';
 
 export default class TasksPage extends React.Component {
     constructor(){
         super();
         this.state = {
-            open: false,
+            addTaskPageOpen: false,
+            finishedTaskPageOpen: false,
             tasks: [
-                {taskName: 'First Task', active: false},
-                {taskName: 'Seconde Task', active: false},
-                {taskName: 'Third Task', active: true},
+                {taskName: 'First Task', active: false, finished: false},
+                {taskName: 'Seconde Task', active: false, finished: false},
+                {taskName: 'Third Task', active: false, finished: false},
             ],
         }
     }
@@ -29,7 +30,7 @@ export default class TasksPage extends React.Component {
     toggleOverlay = () => {
         this.setState({
             ...this.state,
-            open: !this.state.open,
+            addTaskPageOpen: !this.state.addTaskPageOpen,
         })
     }
 
@@ -48,7 +49,7 @@ export default class TasksPage extends React.Component {
 
         this.setState({
             ...this.state,
-            open: !this.state.open,
+            addTaskPageOpen: !this.state.addTaskPageOpen,
             tasks: [...tasks, value]
         })
     }
@@ -65,12 +66,12 @@ export default class TasksPage extends React.Component {
                     />
                 </View>
 
-                <Overlay visible={this.state.open}
+                <Overlay visible={this.state.addTaskPageOpen}
                     closeOnTouchOutside animationType="zoomIn"
                     containerStyle={styles.containerStyle}
                     childrenWrapperStyle={styles.childrenWrapperStyle}
                     animationDuration={500}>
-                    <OverlayPage addTesk={this.addTesk} />
+                    <AddTaskPage addTesk={this.addTesk} />
                 </Overlay>
             </View>
         )
