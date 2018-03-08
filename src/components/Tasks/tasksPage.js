@@ -15,9 +15,9 @@ export default class TasksPage extends React.Component {
         this.state = {
             open: false,
             tasks: [
-                {taskName: 'First Task'},
-                {taskName: 'Seconde Task'},
-                {taskName: 'Third Task'},
+                {taskName: 'First Task', active: false},
+                {taskName: 'Seconde Task', active: false},
+                {taskName: 'Third Task', active: true},
             ],
         }
     }
@@ -33,10 +33,21 @@ export default class TasksPage extends React.Component {
         })
     }
 
+    toggleTask = (props) => {
+        const updateTask = this.state.tasks.map((obj, index) => {
+            return index === props[1] ? props[0] : obj;
+        });
+        this.setState({
+            ...this.state,
+            tasks: updateTask,
+        })
+    }
+
     addTesk = (value) => {
         let {tasks} = this.state; 
 
         this.setState({
+            ...this.state,
             open: !this.state.open,
             tasks: [...tasks, value]
         })
@@ -45,7 +56,7 @@ export default class TasksPage extends React.Component {
     render(){
         return(
             <View style={styles.container}>
-                <List Tasks={this.state.tasks}/>
+                <List toggleTask={this.toggleTask} Tasks={this.state.tasks} />
 
                 <View style={styles.buttonContainer}>
                     <Button textStyle={styles.textStyle}

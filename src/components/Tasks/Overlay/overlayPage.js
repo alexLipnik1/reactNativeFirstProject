@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 import styles from './overlay.Style';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 
-export default Overlay = (props) => {
+export default OverlayPage = (props) => {
     let Task = '';
     const {addTesk} = props;
 
@@ -14,7 +14,7 @@ export default Overlay = (props) => {
     }
 
     const changedText = (value) => {
-        Task = {taskName: value};
+        Task = {taskName: value, active: false};
     }
 
     return (
