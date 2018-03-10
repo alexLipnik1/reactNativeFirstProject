@@ -7,9 +7,6 @@ import styles from './finishedTaskPage.style';
 export default finishedTaskPage = (props) => {
     const {handleOverlayPress} = props;
 
-    const handlePress = () => {
-        handleOverlayPress()
-    }
     return (
         <View style={styles.container} >
             <Image
@@ -21,7 +18,7 @@ export default finishedTaskPage = (props) => {
             <Button textStyle={styles.textStyle}
                     buttonStyle={styles.buttonStyle}
                     title='Submit' 
-                    onPress={handlePress}
+                    onPress={() => handleOverlayPress()}
             />
         </View>
     )

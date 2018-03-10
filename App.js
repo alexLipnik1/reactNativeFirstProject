@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-import styles from './src/Root/App.style';
 import HomePage from './src/components/HomePage/homePage.js';
 import Tasks from './src/components/Tasks/tasksPage';
 

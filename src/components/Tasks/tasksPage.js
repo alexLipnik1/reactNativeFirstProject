@@ -6,7 +6,7 @@ import Overlay from 'react-native-modal-overlay';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 
 import styles from './tasksPage.style'
-import AddTaskPage from './Overlay/overlayPage';
+import AddTaskPage from './AddTask/addTaskPage';
 import List from './TaskList/taskList.js';
 
 export default class TasksPage extends React.Component {

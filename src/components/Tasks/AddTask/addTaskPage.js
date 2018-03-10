@@ -8,15 +8,6 @@ export default OverlayPage = (props) => {
     let Task = '';
     const {addTesk} = props;
 
-
-    const handlePress = () => {
-        addTesk(Task);
-    }
-
-    const changedText = (value) => {
-        Task = {taskName: value, active: false, finished: false};
-    }
-
     return (
         <View style={styles.container} >
             <Text style={styles.header}>Add Task</Text>
@@ -25,14 +16,16 @@ export default OverlayPage = (props) => {
                 <Form>
                     <Item floatingLabel>
                         <Label>Task Name</Label>
-                        <Input onChangeText={changedText}/>
+                        <Input onChangeText={
+                            (value) => Task = {taskName: value, active: false, finished: false}
+                        }/>
                     </Item>
                 </Form>
                 </Content>
             </Container>
             <Button textStyle={styles.textStyle}
                     buttonStyle={styles.buttonStyle}
-                    title='Submit' onPress={handlePress}
+                    title='Submit' onPress={() => addTesk(Task)}
             />
         </View>
     )
