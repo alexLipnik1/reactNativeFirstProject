@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import { Button } from 'react-native-elements';
 import Overlay from 'react-native-modal-overlay';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
+import update from 'immutability-helper';
 
 import styles from './tasksPage.style'
 import AddTaskPage from './AddTask/addTaskPage';
@@ -16,15 +17,16 @@ export default class TasksPage extends React.Component {
             addTaskPageOpen: false,
             finishedTaskPageOpen: false,
             tasks: [
-                {taskName: 'First Task', active: false, finished: false},
-                {taskName: 'Seconde Task', active: false, finished: false},
-                {taskName: 'Third Task', active: false, finished: false},
+                {taskName: 'First Task', importance: 0, active: false, finished: false},
+                {taskName: 'Seconde Task', importance: 0, active: false, finished: false},
+                {taskName: 'Third Task', importance: 0, active: false, finished: false},
             ],
+            newTaskImportance: 0,
         }
     }
 
     componentWillUpdate(nextProps, nextState) {
-        console.log(nextState);
+        // console.log(nextState);
     }
 
     toggleAddTaskPage = () => {
@@ -38,6 +40,7 @@ export default class TasksPage extends React.Component {
         const updateTask = this.state.tasks.map((obj, index) => {
             return index === props[1] ? props[0] : obj;
         });
+        // console.log('taskPage', props)
         this.setState({
             ...this.state,
             tasks: updateTask,
@@ -48,6 +51,13 @@ export default class TasksPage extends React.Component {
         this.setState({
             ...this.state,
             finishedTaskPageOpen: !this.state.finishedTaskPageOpen,
+        })
+    }
+
+    changeImportance = (num) => {
+        this.setState({
+            ...this.state,
+            newTaskImportance: num 
         })
     }
 
@@ -62,9 +72,9 @@ export default class TasksPage extends React.Component {
         })
     }
 
-    addTesk = (value) => {
-        let {tasks} = this.state; 
-
+    addTesk = (value, _importance) => {
+        const {tasks} = this.state;
+        
         this.setState({
             ...this.state,
             addTaskPageOpen: !this.state.addTaskPageOpen,
@@ -96,7 +106,11 @@ export default class TasksPage extends React.Component {
                     containerStyle={styles.containerStyle}
                     childrenWrapperStyle={styles.childrenWrapperStyle}
                     animationDuration={500}>
-                    <AddTaskPage addTesk={this.addTesk} />
+                    <AddTaskPage 
+                        changeImportance={this.changeImportance}
+                        addTesk={this.addTesk}
+                        newTaskImportance={this.state.newTaskImportance}
+                    />
                 </Overlay>
             </View>
         )

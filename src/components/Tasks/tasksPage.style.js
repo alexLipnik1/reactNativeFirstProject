@@ -14,10 +14,9 @@ export default styles = StyleSheet.create({
         paddingTop: 20,
     },
     containerStyle: {
-        backgroundColor: 'rgba(37, 8, 10, 0.78)'
     },
     childrenWrapperStyle: {
-        flex: 1,
+        height: 450,
         backgroundColor: 'white'
     },
 

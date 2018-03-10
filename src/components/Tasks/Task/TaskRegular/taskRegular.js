@@ -18,7 +18,11 @@ export default TaskRegular = (props) => {
 
 
     function handleTaskPress(){
-        const newTask = {taskName: Tasks[this.index].taskName, active: !Tasks[this.index].active}
+        const 
+            newTask = {taskName: Tasks[this.index].taskName,
+            importance: Tasks[this.index].importance,
+            active: !Tasks[this.index].active,
+        }
         return toggleTask([newTask ,this.index]);
     }
 

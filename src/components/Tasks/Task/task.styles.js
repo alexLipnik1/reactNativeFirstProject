@@ -43,12 +43,12 @@ export default styles = StyleSheet.create({
     ActiveOptionsContainer:{
         height: 60,
         flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     taskBodyActive: {
-        height: 115,
+        height: 145,
         backgroundColor: mainColor,
         flex: 6,
-        justifyContent: 'center',
     },  
     textContainer: {
         backgroundColor: '#85e0e0',
@@ -68,16 +68,19 @@ export default styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     importance: {
-        flex: 1,
+        width: 65,
+        height: 65,
         margin: 10,
+        marginRight: 0,
         backgroundColor: 'white',
     },
     activeButton: {
-        margin: 6,
         borderBottomWidth: 1.5, 
         borderRightWidth: 0.5, 
         borderColor: '#cccccc', 
-        width: 115,
+        width: 200,
+        margin: 10,
+        height: 66,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
