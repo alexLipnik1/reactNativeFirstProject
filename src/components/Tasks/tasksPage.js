@@ -27,7 +27,7 @@ export default class TasksPage extends React.Component {
         console.log(nextState);
       }
 
-    toggleOverlay = () => {
+    toggleAddPageOverlay = () => {
         this.setState({
             ...this.state,
             addTaskPageOpen: !this.state.addTaskPageOpen,
@@ -44,6 +44,14 @@ export default class TasksPage extends React.Component {
         })
     }
 
+    toggleFinishedTaskOverlay = () => {
+        this.setState({
+            ...this.state,
+            finishedTaskPageOpen: !this.state.finishedTaskPageOpen,
+        })
+    }
+
+
     addTesk = (value) => {
         let {tasks} = this.state; 
 
@@ -57,12 +65,17 @@ export default class TasksPage extends React.Component {
     render(){
         return(
             <View style={styles.container}>
-                <List toggleTask={this.toggleTask} Tasks={this.state.tasks} />
+                <List 
+                    toggleFinishedTaskOverlay={this.toggleFinishedTaskOverlay}
+                    toggleTask={this.toggleTask}
+                    Tasks={this.state.tasks} 
+                    finishedTaskOverlay={this.state.finishedTaskPageOpen}
+                />
 
                 <View style={styles.buttonContainer}>
                     <Button textStyle={styles.textStyle}
                             buttonStyle={styles.buttonStyle}
-                            title='Add Task' onPress={this.toggleOverlay}
+                            title='Add Task' onPress={this.toggleAddPageOverlay}
                     />
                 </View>
 
