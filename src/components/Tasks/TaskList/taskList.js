@@ -11,8 +11,10 @@ import styles from './taskList.style';
 export default _List = (props) => {
     const {
         Tasks,
+        lastActiveIndex,
         toggleTask,
-        toggleFinishedTaskOverlay,
+        toggleFinishedTaskPage,
+        finishedTaskPage,
         finishedTaskOverlay
     } = props; 
 
@@ -21,7 +23,7 @@ export default _List = (props) => {
         <Overlay visible={finishedTaskOverlay}
             closeOnTouchOutside animationType="zoomIn"
             animationDuration={500} >
-            <FinishedTaskPage handleOverlayPress={() => toggleFinishedTaskOverlay()}/>
+            <FinishedTaskPage toggleFinishedTaskPage={() => toggleFinishedTaskPage()}/>
         </Overlay>
         <List >{
             Tasks.map((l, i) => (
@@ -30,7 +32,7 @@ export default _List = (props) => {
                     task={l}
                     _index={i}
                     toggleTask={toggleTask}
-                    handleOverlayPress={() => toggleFinishedTaskOverlay()}
+                    finishedTaskPage={finishedTaskPage}
                     Tasks={Tasks}
                 />
             ))}

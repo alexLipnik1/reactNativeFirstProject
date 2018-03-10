@@ -25,9 +25,9 @@ export default class TasksPage extends React.Component {
 
     componentWillUpdate(nextProps, nextState) {
         console.log(nextState);
-      }
+    }
 
-    toggleAddPageOverlay = () => {
+    toggleAddTaskPage = () => {
         this.setState({
             ...this.state,
             addTaskPageOpen: !this.state.addTaskPageOpen,
@@ -44,13 +44,23 @@ export default class TasksPage extends React.Component {
         })
     }
 
-    toggleFinishedTaskOverlay = () => {
+    toggleFinishedTaskPage = (props) => {
         this.setState({
             ...this.state,
             finishedTaskPageOpen: !this.state.finishedTaskPageOpen,
         })
     }
 
+    finishedTaskPage = (props) => {
+        const updateTask = this.state.tasks.map((obj, index) => {
+            return index === props[1] ? props[0] : obj;
+        });
+        this.setState({
+            ...this.state,
+            tasks: updateTask,
+            finishedTaskPageOpen: !this.state.finishedTaskPageOpen,
+        })
+    }
 
     addTesk = (value) => {
         let {tasks} = this.state; 
@@ -66,7 +76,9 @@ export default class TasksPage extends React.Component {
         return(
             <View style={styles.container}>
                 <List 
-                    toggleFinishedTaskOverlay={this.toggleFinishedTaskOverlay}
+                    lastActiveIndex = {this.state.lastActiveIndex}
+                    finishedTaskPage={this.finishedTaskPage}
+                    toggleFinishedTaskPage={this.toggleFinishedTaskPage}
                     toggleTask={this.toggleTask}
                     Tasks={this.state.tasks} 
                     finishedTaskOverlay={this.state.finishedTaskPageOpen}
@@ -75,7 +87,7 @@ export default class TasksPage extends React.Component {
                 <View style={styles.buttonContainer}>
                     <Button textStyle={styles.textStyle}
                             buttonStyle={styles.buttonStyle}
-                            title='Add Task' onPress={this.toggleAddPageOverlay}
+                            title='Add Task' onPress={this.toggleAddTaskPage}
                     />
                 </View>
 

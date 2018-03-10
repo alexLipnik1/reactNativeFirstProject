@@ -4,7 +4,9 @@ import { List, ListItem, Button } from 'react-native-elements';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import Overlay from 'react-native-modal-overlay';
 
-import TaskActive from './TaskActive/taskActive'
+import TaskActive from './TaskActive/taskActive';
+import TaskRegular from './TaskRegular/taskRegular';
+import TaskFinished from './TaskFinished/taskFinished';
 import styles from './task.styles';
 
 export default Task = (props) => {
@@ -12,47 +14,46 @@ export default Task = (props) => {
         task,
         _index,
         toggleTask,
-        handleOverlayPress,
+        finishedTaskPage,
         Tasks
     } = props;
 
-    function handleTaskPress(){
-        const newTask = {taskName: Tasks[this.index].taskName, active: !Tasks[this.index].active}
-        return toggleTask([newTask ,this.index]);
+    const TaskStyle = () => {
+        if(task.finished){
+            return(
+                <TaskFinished 
+                    task={task}
+                    _index={_index}
+                    Tasks={Tasks}
+                />
+            )
+        }
+        else{
+            if(task.active){
+                return(
+                    <TaskActive
+                        task={task}
+                        _index={_index}
+                        toggleTask={toggleTask}
+                        finishedTaskPage={finishedTaskPage}
+                        Tasks={Tasks}
+                    />
+                )
+            }
+            if(!task.active){
+                return(
+                    <TaskRegular 
+                        task={task}
+                        _index={_index}
+                        toggleTask={toggleTask}
+                        Tasks={Tasks}
+                    />
+                )
+            }
+        }
     }
 
     return (
-        <View style={styles.container}>
-            <TouchableOpacity 
-                onPress={handleTaskPress}
-                index={_index}
-                style={
-                    task.active ?
-                    styles.taskBodyActive : 
-                    styles.taskBody
-                } 
-            >
-                <View >
-                    <View 
-                        style={
-                            task.active ?
-                            styles.textContainer : 
-                            '' } >
-                        <Text  
-                            style={
-                                task.active ?
-                                styles.textActive : 
-                                styles.text
-                            } >
-                            {task.taskName}
-                        </Text>
-                    </View>
-                    { task.active ? <TaskActive handleOverlayPress={handleOverlayPress} /> : <View /> }
-                </View>
-            </TouchableOpacity>
-            <View style={styles.indicatorBody} >
-                <View style={styles.indicator}></View>
-            </View>
-        </View>
+        <TaskStyle />
     )
 }

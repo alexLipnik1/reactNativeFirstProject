@@ -10,23 +10,53 @@ const _icon = 'ios-checkmark-circle-outline';
 
 
 export default taskActive = (props) => {
-    const {handleOverlayPress} = props;
+    const {finishedTaskPage, toggleTask, task, _index, Tasks} = props;
     
+    function handlePress(){
+        const newTask = {
+            taskName: Tasks[_index].taskName,
+            active: Tasks[_index].active,
+            finished: !Tasks[_index].finished
+        }
+        return finishedTaskPage([newTask ,_index]);
+    }
+
+    function handleTaskPress(){
+        const newTask = {taskName: Tasks[this.index].taskName, active: !Tasks[this.index].active}
+        return toggleTask([newTask ,this.index]);
+    }
+
     return (
-    <View style={styles.ActiveOptionsContainer}>
-        <View style={styles.notification}>
-
-        </View>
-        <View style={styles.importance}>
-
-        </View>
+        <View style={styles.container}>
         <TouchableOpacity 
-            style={styles.activeButton}
-            onPress={() => handleOverlayPress()}
+            onPress={handleTaskPress}
+            index={_index}
+            style={styles.taskBodyActive} 
         >
-            <Text style={{fontWeight: '400', marginRight: 10, fontSize: 15}}>Finished</Text>
-            <Ionicons name={_icon} size={30} color='#000' />
-            
+            <View >
+                <View style={styles.textContainer} >
+                    <Text style={styles.textActive}>
+                        {task.taskName}
+                    </Text>
+                </View>
+                <View style={styles.ActiveOptionsContainer}>
+                    <View style={styles.notification}/>
+                    <View style={styles.importance} />
+                    <TouchableOpacity 
+                        style={styles.activeButton}
+                        onPress={handlePress}
+                    >
+                        <Text style={{fontWeight: '400', marginRight: 10, fontSize: 15}}>Finished</Text>
+                        <Ionicons name={_icon} size={30} color='#000' />
+                        
+                    </TouchableOpacity>
+                </View>
+            </View>
         </TouchableOpacity>
+        <View style={styles.indicatorBody} >
+            <View style={styles.indicator}></View>
+        </View>
     </View>
+
+
 )}
