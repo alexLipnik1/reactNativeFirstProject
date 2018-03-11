@@ -22,6 +22,7 @@ export default class TasksPage extends React.Component {
                 {taskName: 'Third Task', importance: 0, active: false, finished: false},
             ],
             newTaskImportance: 0,
+            newTaskName: '',
         }
     }
 
@@ -61,6 +62,12 @@ export default class TasksPage extends React.Component {
         })
     }
 
+    changeTaskName = (_newTaskName) => {
+        this.setState({
+            ...this.state,
+            newTaskName: _newTaskName
+        })
+    }
     finishedTaskPage = (props) => {
         const updateTask = this.state.tasks.map((obj, index) => {
             return index === props[1] ? props[0] : obj;
@@ -73,12 +80,16 @@ export default class TasksPage extends React.Component {
     }
 
     addTesk = (value, _importance) => {
-        const {tasks} = this.state;
-        
+        console.log(value)
+        let obj = {taskName: value, importance: _importance, active: false, finished: false};
+
         this.setState({
             ...this.state,
             addTaskPageOpen: !this.state.addTaskPageOpen,
-            tasks: [...tasks, value]
+            tasks: [
+                ...this.state.tasks,
+                obj
+            ]
         })
     }
 
@@ -107,6 +118,8 @@ export default class TasksPage extends React.Component {
                     childrenWrapperStyle={styles.childrenWrapperStyle}
                     animationDuration={500}>
                     <AddTaskPage 
+                        changeTaskName={this.changeTaskName}
+                        newTaskName={this.state.newTaskName}
                         changeImportance={this.changeImportance}
                         addTesk={this.addTesk}
                         newTaskImportance={this.state.newTaskImportance}

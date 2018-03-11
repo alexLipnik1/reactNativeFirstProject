@@ -6,8 +6,7 @@ import { Container, Header, Content, Form, Item, Input, Label } from 'native-bas
 import index from 'react-native-modal-overlay';
 
 export default OverlayPage = (props) => {
-    let Task = '';
-    const {addTesk, changeImportance, newTaskImportance} = props;
+    const {addTesk, changeImportance, changeTaskName ,newTaskName, newTaskImportance} = props;
 
     return (
         <ScrollView >
@@ -19,7 +18,7 @@ export default OverlayPage = (props) => {
                             <Item floatingLabel>
                                 <Label>Task Name</Label>
                                 <Input onChangeText={
-                                    (value) => Task = {taskName: value, active: false, finished: false}
+                                    (value) => changeTaskName(value)
                                 }/>
                             </Item>
                     </Form>
@@ -46,7 +45,7 @@ export default OverlayPage = (props) => {
                 </View>
                 <Button textStyle={styles.textStyle}
                         buttonStyle={styles.buttonStyle}
-                        title='Submit' onPress={() => addTesk(Task, newTaskImportance)}
+                        title='Submit' onPress={() => addTesk(newTaskName, newTaskImportance)}
                 />
             </View>
         </ScrollView>
