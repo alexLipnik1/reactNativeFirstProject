@@ -26,9 +26,34 @@ export default class TasksPage extends React.Component {
         }
     }
 
+
+
+    componentDidMount() {
+        try{
+            AsyncStorage.getItem("state").then((value)=> {
+                this.setState(JSON.parse(value));
+            });
+        }
+        catch(error){
+
+        }
+    }
+
     componentWillUpdate(nextProps, nextState) {
         // console.log(nextState);
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(this.state !== prevState) {
+            try {
+                AsyncStorage.setItem("state", JSON.stringify(this.state));
+            } 
+            catch (error) {
+            }
+        }
+    }
+
+
 
     toggleAddTaskPage = () => {
         this.setState({
