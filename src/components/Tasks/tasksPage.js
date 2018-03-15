@@ -79,6 +79,17 @@ export default class TasksPage extends React.Component {
         })
     }
 
+    removeTask = (state, i) => {
+        console.log(i)
+        const arr = [
+            ...this.state.tasks.slice(0, i),
+            ...this.state.tasks.slice(i+1)
+        ]
+        this.setState({
+            tasks: arr
+        })
+    }
+
     addTesk = (value, _importance) => {
         console.log(value)
         let obj = {taskName: value, importance: _importance, active: false, finished: false};
@@ -97,6 +108,7 @@ export default class TasksPage extends React.Component {
         return(
             <View style={styles.container}>
                 <List 
+                    removeTask={this.removeTask}
                     lastActiveIndex = {this.state.lastActiveIndex}
                     finishedTaskPage={this.finishedTaskPage}
                     toggleFinishedTaskPage={this.toggleFinishedTaskPage}
