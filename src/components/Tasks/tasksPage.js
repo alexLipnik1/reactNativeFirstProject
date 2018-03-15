@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text } from 'react-native';
+import {AsyncStorage, View, Text } from 'react-native';
 import { Button } from 'react-native-elements';
 import Overlay from 'react-native-modal-overlay';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
@@ -17,26 +17,19 @@ export default class TasksPage extends React.Component {
             addTaskPageOpen: false,
             finishedTaskPageOpen: false,
             tasks: [
-                {taskName: 'First Task', importance: 0, active: false, finished: false},
-                {taskName: 'Seconde Task', importance: 0, active: false, finished: false},
-                {taskName: 'Third Task', importance: 0, active: false, finished: false},
             ],
             newTaskImportance: 0,
             newTaskName: '',
         }
     }
 
-
-
     componentDidMount() {
-        try{
-            AsyncStorage.getItem("state").then((value)=> {
-                this.setState(JSON.parse(value));
-            });
-        }
-        catch(error){
-
-        }
+        console.log('componentDidMount')
+        AsyncStorage.getItem("state").then((value)=> {
+            console.log('get ',value)
+            console.log(JSON.parse(value))
+            this.setState(JSON.parse(value));
+        });
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -45,11 +38,8 @@ export default class TasksPage extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if(this.state !== prevState) {
-            try {
-                AsyncStorage.setItem("state", JSON.stringify(this.state));
-            } 
-            catch (error) {
-            }
+            console.log('add',JSON.stringify(this.state))
+            AsyncStorage.setItem("state", JSON.stringify(this.state));
         }
     }
 
