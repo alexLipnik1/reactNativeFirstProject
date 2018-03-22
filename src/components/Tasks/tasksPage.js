@@ -14,16 +14,12 @@ export default class TasksPage extends React.Component {
     constructor(){
         super();
         this.state = {
-            taskIndex: 0,            
             addTaskPageOpen: false,
             finishedTaskPageOpen: false,
             removeTaskPageOpen: false,
             tasks: [
-                {taskName: 'value 1', importance: 0, active: true, finished: false},
-                {taskName: 'value 2', importance: 1, active: true, finished: false},
-                {taskName: 'value 3', importance: 2, active: true, finished: false},
-                
             ],
+            taskIndex: 0,                        
             newTaskImportance: 0,
             newTaskName: '',
         }
@@ -39,7 +35,7 @@ export default class TasksPage extends React.Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        // console.log(nextState);
+        console.log(nextState.taskIndex, 'componentWillupdate');
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -50,7 +46,7 @@ export default class TasksPage extends React.Component {
     }
 
 
-    changeTaskIndex = (i) => {
+    changeTaskIndex = (state, i) => {
         console.log('change', i)
         this.setState({
             ...this.state,
@@ -115,7 +111,7 @@ export default class TasksPage extends React.Component {
     }
 
     removeTask = (i) => {
-        console.log(i)
+        console.log(i, 'remove')
         const arr = [
             ...this.state.tasks.slice(0, i),
             ...this.state.tasks.slice(i+1)

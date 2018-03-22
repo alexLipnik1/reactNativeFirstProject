@@ -25,7 +25,7 @@ const removeTaskPage = (props) => {
                     borderRadius: 2,
                     marginRight: -10,
                 }} 
-                onPress={()=>removeTask(taskIndex)}
+                onPress={()=>{removeTask(taskIndex), console.log(taskIndex, 'test')}}
                 title="Yes" />
             <Button 
                 textStyle={{fontSize: 17, fontWeight: 'bold'}}

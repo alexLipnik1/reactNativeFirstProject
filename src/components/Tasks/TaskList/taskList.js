@@ -25,8 +25,8 @@ export default _List = (props) => {
         finishedTaskOverlay
     } = props; 
 
-    const handleRemove = (state, i) => {
-        changeTaskIndex(i);
+    const handleRemove = (state, i) => {    
+        changeTaskIndex(state, i);
         toggleRemoveTaskPage();
     }
 
@@ -37,16 +37,16 @@ export default _List = (props) => {
             animationDuration={500} >
             <FinishedTaskPage toggleFinishedTaskPage={() => toggleFinishedTaskPage()}/>
         </Overlay>
-        <Overlay visible={true}//removeTaskPage}
+        <Overlay visible={removeTaskPage}
             animationType="zoomIn"
             animationDuration={500} >
-            <RemoveTaskPage taskIndex={taskIndex} removeTask={removeTask} toggleRemoveTaskPage={() => toggleRemoveTaskPage()}/>
+            <RemoveTaskPage taskIndex={taskIndex} removeTask={removeTask} toggleRemoveTaskPage={() =>{ toggleRemoveTaskPage(), console.log(taskIndex, 'list')}}/>
         </Overlay>
         <List >{
             Tasks.map((l, i) => (
                 <GestureRecognizer 
                     key={i}            
-                    onSwipeLeft={(state)=> handleRemove(state, i)}
+                    onSwipeLeft={(state)=> {handleRemove(state, i)}}//handleRemove(state, i)}
                 >
                     <Task
                         key={i}
