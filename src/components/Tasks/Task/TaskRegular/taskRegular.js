@@ -16,6 +16,18 @@ export default TaskRegular = (props) => {
         Tasks
     } = props;
 
+    const Istyle = () => {
+        if(task.importance==0){
+            return <View style={styles.importance_1}/>  
+        }
+        else if(task.importance==1){
+            return <View style={styles.importance_2}/>
+        }
+        else if(task.importance==2){
+            return <View style={styles.importance_3}/>
+        }
+        else return <View /> 
+    }
 
     function handleTaskPress(){
         const 
@@ -43,7 +55,7 @@ export default TaskRegular = (props) => {
                 </View>
             </TouchableOpacity>
             <View style={styles.indicatorBody} >
-                <View style={styles.indicator}></View>
+                <Istyle />
             </View>
         </View>
     )

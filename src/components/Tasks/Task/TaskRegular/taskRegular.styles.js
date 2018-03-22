@@ -29,7 +29,25 @@ export default styles = StyleSheet.create({
         borderRadius: 50,        
         height: 35,
         width: 35,
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#FA8072',
+    },
+    importance_1:{
+        borderRadius: 50,        
+        height: 35,
+        width: 35,
+        backgroundColor: '#75a3a3',
+    },
+    importance_2:{
+        borderRadius: 50,        
+        height: 35,
+        width: 35,
+        backgroundColor: '#F0E68C',
+    },
+    importance_3:{
+        borderRadius: 50,        
+        height: 35,
+        width: 35,
+        backgroundColor: '#ff4d4d',
     },
 
   });

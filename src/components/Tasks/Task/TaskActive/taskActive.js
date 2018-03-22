@@ -5,7 +5,6 @@ import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import Overlay from 'react-native-modal-overlay';
 import { Ionicons } from '@expo/vector-icons'; // 6.2.2
 
-import ImportanceStyle from '../../AddTask/addTaskPage.Style'
 import styles from '../task.styles';
 const _icon = 'ios-checkmark-circle-outline';    
 
@@ -23,15 +22,14 @@ export default taskActive = (props) => {
     }
 
     const Istyle = () => {
-        // console.log(task)
         if(task.importance==0){
-            return <View style={ImportanceStyle.importance_1}/>  
+            return <View style={styles.importance_1}/>  
         }
         else if(task.importance==1){
-            return <View style={ImportanceStyle.importance_2}/>
+            return <View style={styles.importance_2}/>
         }
         else if(task.importance==2){
-            return <View style={ImportanceStyle.importance_3}/>
+            return <View style={styles.importance_3}/>
         }
         else return <View /> 
     }
@@ -59,7 +57,6 @@ export default taskActive = (props) => {
                     </Text>
                 </View>
                 <View style={styles.ActiveOptionsContainer}>
-                    <Istyle />
                     <TouchableOpacity 
                         style={styles.activeButton}
                         onPress={handlePress}
@@ -72,7 +69,7 @@ export default taskActive = (props) => {
             </View>
         </TouchableOpacity>
         <View style={styles.indicatorBody} >
-            <View style={styles.indicator}></View>
+            <Istyle />
         </View>
     </View>
 

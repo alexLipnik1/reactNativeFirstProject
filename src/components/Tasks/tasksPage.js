@@ -17,6 +17,10 @@ export default class TasksPage extends React.Component {
             addTaskPageOpen: false,
             finishedTaskPageOpen: false,
             tasks: [
+                {taskName: 'value 1', importance: 0, active: true, finished: false},
+                {taskName: 'value 2', importance: 1, active: true, finished: false},
+                {taskName: 'value 3', importance: 2, active: true, finished: false},
+                
             ],
             newTaskImportance: 0,
             newTaskName: '',
