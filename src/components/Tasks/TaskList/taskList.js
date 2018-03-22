@@ -33,12 +33,12 @@ export default _List = (props) => {
     return (
     <ScrollView  >
         <Overlay visible={finishedTaskOverlay}
-            closeOnTouchOutside animationType="zoomIn"
+            animationType="zoomIn"
             animationDuration={500} >
             <FinishedTaskPage toggleFinishedTaskPage={() => toggleFinishedTaskPage()}/>
         </Overlay>
-        <Overlay visible={removeTaskPage}
-            closeOnTouchOutside animationType="zoomIn"
+        <Overlay visible={true}//removeTaskPage}
+            animationType="zoomIn"
             animationDuration={500} >
             <RemoveTaskPage taskIndex={taskIndex} removeTask={removeTask} toggleRemoveTaskPage={() => toggleRemoveTaskPage()}/>
         </Overlay>

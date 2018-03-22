@@ -12,8 +12,8 @@ import { TabNavigator, TabBarBottom } from 'react-navigation'; // 1.0.0-beta.27
 
 const _icon = 'ios-cube';
 const Tab = TabNavigator({
-  Home: { screen: HomePage },
   Tasks: { screen: Tasks },
+  Home: { screen: HomePage },
   },
 
 

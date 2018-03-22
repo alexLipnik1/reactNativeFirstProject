@@ -12,10 +12,32 @@ const removeTaskPage = (props) => {
     }= props;
 
     return(
-    <View>
-        <Text>Are you sure you want to remove this task?</Text>
-        <Button onPress={()=>removeTask(taskIndex)} title="Yes"/>
-        <Button onPress={toggleRemoveTaskPage} title="No"/>
+    <View style={{alignItems: 'center'}}>
+        <Text style={{padding: 20, fontSize: 21, fontWeight: 'bold'}}>
+            Are you sure you want to remove this task ?
+        </Text>
+        <View style={{flexDirection: 'row'}}>
+            <Button 
+                textStyle={{fontSize: 17, fontWeight: 'bold'}}                
+                buttonStyle={{
+                    width: 120,
+                    backgroundColor: '#ff1a1a',
+                    borderRadius: 2,
+                    marginRight: -10,
+                }} 
+                onPress={()=>removeTask(taskIndex)}
+                title="Yes" />
+            <Button 
+                textStyle={{fontSize: 17, fontWeight: 'bold'}}
+                buttonStyle={{
+                    width: 120,
+                    backgroundColor: '#999999',
+                    borderRadius: 2,          
+                    marginLeft: -10,
+                }} 
+                onPress={toggleRemoveTaskPage} 
+                title="No" />
+        </View>
     </View>
 )}
 
