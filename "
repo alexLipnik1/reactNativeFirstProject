@@ -1,0 +1,179 @@
+[33mcommit 8835b08dcaf067432b34fbfeb708e0438d048c2c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 22 15:13:38 2018 +0200
+
+    fixed annoyig bag
+
+[33mcommit 80e374019948abfa3a62530ca16119d16fe425fb[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 22 14:03:08 2018 +0200
+
+    desigend the remove page
+
+[33mcommit add3db4b16c271e11d4f15532fa78c9e9182c3d4[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 22 13:23:56 2018 +0200
+
+    added remove page
+
+[33mcommit 52a69e6fcf9e90bcaabc946e970b5c588cd9f583[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 22 12:25:08 2018 +0200
+
+    added indicator color
+
+[33mcommit 2165799c153568aef6b9efcc9b177b8594be8869[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 15 15:51:42 2018 +0200
+
+    fixed issus with localstorage
+
+[33mcommit 9c0f6aa542e1ba18fb6bc09aa0c91b72565f0da0[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 15 15:17:57 2018 +0200
+
+    local storage
+
+[33mcommit a88be8d3465f56b3344ac9c17695dda778b95d9d[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 15 14:56:40 2018 +0200
+
+    added remove task
+
+[33mcommit c4e2c522a95bc0b879f18cf688a234c2638564c8[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sun Mar 11 11:51:25 2018 +0200
+
+    fixed some bugs
+
+[33mcommit 173776fc1afcb37f1a8ef4e18074684a02efeeeb[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sun Mar 11 00:16:44 2018 +0200
+
+    finished prototype
+
+[33mcommit fce7fc229dc45299ee1c8bc4a15ca5d91b50532c[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sat Mar 10 20:06:26 2018 +0200
+
+    added finished design to task
+
+[33mcommit c5798fb0f6aacca54adbe255812e692f60241791[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sat Mar 10 17:04:58 2018 +0200
+
+    temp
+
+[33mcommit 4aee2d3c677f4446c48604decd61bdf72d840fa7[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sat Mar 10 16:35:15 2018 +0200
+
+    made task file to make tasklist less heavy
+
+[33mcommit bf491f93b533a4c1269595862294a7b68b696b08[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sat Mar 10 15:02:25 2018 +0200
+
+    added design to the overlay of finished task page
+
+[33mcommit 1bad006f8fcf56b6a9f68c8278718ed5f2d46689[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 8 16:46:01 2018 +0200
+
+    temp
+
+[33mcommit bd0d7f7fd82df773045cb62aff9e7de0adb11e17[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 8 16:26:22 2018 +0200
+
+    added layout to active task
+
+[33mcommit 4c6aa8768ec538ed80f0a86f5ac0a3aa4347f284[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 8 13:45:58 2018 +0200
+
+    added toggleTask
+
+[33mcommit 6f5e599e33bf44ebac515c6fb30cb55eb083d814[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Tue Mar 6 13:42:38 2018 +0200
+
+    temp
+
+[33mcommit dae84d05948b7a9a1dbd07d0e995489aa88f69cb[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sat Mar 3 12:16:51 2018 +0200
+
+    temp
+
+[33mcommit e412aafe93cac36beef0a1773cf0abd878feacb7[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sat Mar 3 11:18:18 2018 +0200
+
+    fixed the addTask problem and added componenentWillUpdate to view the changes in state
+
+[33mcommit a70d3105f3e8a67088f34d57484ce57a17669738[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Thu Mar 1 19:58:35 2018 +0200
+
+    added input functionality
+
+[33mcommit 3b19cd79d956e2815381320d108db715ff611e93[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Wed Feb 28 15:45:24 2018 +0200
+
+    added overlay page
+
+[33mcommit 73c6f8db2e1db69491413a5f87b95b29c70a1110[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Tue Feb 27 19:31:18 2018 +0200
+
+    little bit disganed
+
+[33mcommit fcd5f8a406aa293cf27e32cc351e54cd6b274a79[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Tue Feb 27 19:05:28 2018 +0200
+
+    temp
+
+[33mcommit 0e87fd0f70944ec4c8b6a3b4f1a309cdcd2a9846[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Tue Feb 27 17:38:33 2018 +0200
+
+    tab navigation
+
+[33mcommit 252b38e644b18bc5852a4c2623a4c0aa66332cd4[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Tue Feb 27 14:02:51 2018 +0200
+
+    added routing
+
+[33mcommit 64d6d83939c1b49d703ffd6ac09059f72b2605dd[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Mon Feb 26 15:38:39 2018 +0200
+
+    made some order in files
+
+[33mcommit dab8bf76a41329b9001b10b465aaa802d0ac33ed[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Mon Feb 26 13:56:01 2018 +0200
+
+    temp
+
+[33mcommit a0adaed7f30f7b8aca47186b057d37a5a00c7eea[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Sat Feb 24 02:26:43 2018 +0200
+
+    temp
+
+[33mcommit 75d863e9ee74ef1c0a60944aec4da063869b5e64[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Mon Feb 19 13:54:34 2018 +0200
+
+    temp
+
+[33mcommit d227c31083a0f10c44f022ddd9d517717b708519[m
+Author: alexLipnik1 <alex.lipnik111@gmail.com>
+Date:   Tue Feb 13 22:35:12 2018 +0200
+
+    initial

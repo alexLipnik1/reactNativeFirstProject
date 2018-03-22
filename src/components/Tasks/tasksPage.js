@@ -50,7 +50,8 @@ export default class TasksPage extends React.Component {
         console.log('change', i)
         this.setState({
             ...this.state,
-            taskIndex: i 
+            taskIndex: i,
+            removeTaskPageOpen: !this.state.removeTaskPageOpen
         })
     }
 
@@ -141,6 +142,7 @@ export default class TasksPage extends React.Component {
             <View style={styles.container}>
                 <List 
                     taskIndex={this.state.taskIndex}
+                    _changeTaskIndex={this._changeTaskIndex}
                     changeTaskIndex={this.changeTaskIndex}
                     removeTask={this.removeTask}
                     removeTaskPage= {this.state.removeTaskPageOpen}
