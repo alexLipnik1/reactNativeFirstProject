@@ -96,7 +96,7 @@ export default styles = StyleSheet.create({
         borderBottomWidth: 1.5, 
         borderRightWidth: 0.5, 
         borderColor: '#cccccc', 
-        width: 200,
+        width: 280,
         margin: 10,
         height: 66,
         justifyContent: 'center',
