@@ -26,15 +26,6 @@ export default _List = (props) => {
         finishedTaskOverlay
     } = props; 
 
-    // const handleRemove = (state, i) => {    
-    //     if(i == 0){
-    //         _changeTaskIndex(i)
-    //     }
-    //     changeTaskIndex(state, i);
-        
-    //     toggleRemoveTaskPage();
-    // }
-
     return (
     <ScrollView  >
         <Overlay visible={finishedTaskOverlay}

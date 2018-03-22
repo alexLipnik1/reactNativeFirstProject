@@ -7,15 +7,25 @@ export default class HomePage extends React.Component{
 
     render(){
         const header = 'Wellcom';
-        const subHeader = 'to the best day of your life';
+        const subHeader = 'to the best day of your life !!!';
+        const first = 'We overesimate how much we can do in one day, and underestimate how much we can do in several days!';
+        
 
         return(
             <View style={styles.container}>
-                <Text style={{color: 'black', fontSize: 40, fontWeight: 'bold', paddingTop: 70}}>{header}</Text>
-                <Text style={{color: 'black', fontSize: 20, fontWeight: 'bold', paddingTop: 0}}>{subHeader}</Text>
+                <View style={styles.headerContainer}>
+                    <Text style={styles.mainHeader}>{header}</Text>
+                    <Text style={styles.subHeader}>{subHeader}</Text>
+                </View>
+                <View style={styles.textContainer}>
+                    <Text style={styles.firstText}>{first}</Text>
+                </View>
+                <View style={{backgroundColor:'black', height: 10, width: '100%'}}>
+
+                </View>
                 <Image
-                    style={{width: 140, height: 140, marginTop: 30}}
-                    source={{uri: 'https://cdn0.iconfinder.com/data/icons/simple-icons-4/512/like.png'}}
+                    style={{width: 340, height: 240, marginTop: 30}}
+                    // source={{uri: 'http://www.claraapollo.com/wp-content/uploads/2017/01/images.duckduckgo-3.jpg'}}
                 />
             </View>
         )
